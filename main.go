@@ -6,6 +6,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -14,5 +16,6 @@ func main() {
 
 	router := gin.New()
 	router.Use(gin.Logger())
-	
+
+	router.Run("localhost:" + port)
 }
