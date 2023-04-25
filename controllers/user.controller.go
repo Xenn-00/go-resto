@@ -5,4 +5,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var UserCollection *mongo.Collection = database.UserData(database.Client, "Users")
+var UserCollection *mongo.Collection = database.CreateCollection(database.Client, "Users")

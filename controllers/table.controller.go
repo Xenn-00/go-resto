@@ -5,4 +5,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var TableCollection *mongo.Collection = database.TableData(database.Client, "Tables")
+var TableCollection *mongo.Collection = database.CreateCollection(database.Client, "Tables")

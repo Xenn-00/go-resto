@@ -5,4 +5,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var OrderItemCollection *mongo.Collection = database.OrderItemData(database.Client, "Order-Items")
+var OrderItemCollection *mongo.Collection = database.CreateCollection(database.Client, "Order-Items")

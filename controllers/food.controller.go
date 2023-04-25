@@ -5,4 +5,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var FoodCollection *mongo.Collection = database.FoodData(database.Client, "Foods")
+var FoodCollection *mongo.Collection = database.CreateCollection(database.Client, "Foods")

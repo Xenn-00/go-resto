@@ -5,4 +5,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var MenuCollection *mongo.Collection = database.MenuData(database.Client, "Menus")
+var MenuCollection *mongo.Collection = database.CreateCollection(database.Client, "Menus")

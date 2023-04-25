@@ -5,4 +5,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var InvoiceCollection *mongo.Collection = database.InvoiceData(database.Client, "Invoices")
+var InvoiceCollection *mongo.Collection = database.CreateCollection(database.Client, "Invoices")
