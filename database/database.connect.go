@@ -12,7 +12,7 @@ import (
 )
 
 func DBSetup() *mongo.Client {
-	uri := fmt.Sprintf("mongodb+srv://Xenn:%s@cluster0.ycwzsug.mongodb.net/restaurant-management?retryWrites=true&w=majority", os.Getenv("MONGO_PASSWORD"))
+	uri := os.Getenv("MONGO_URI")
 	client, err := mongo.NewClient(options.Client().ApplyURI(uri))
 	if err != nil {
 		log.Fatal(err)
@@ -35,36 +35,7 @@ func DBSetup() *mongo.Client {
 
 var Client *mongo.Client = DBSetup()
 
-func FoodData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
-	return collection
-}
-
-func InvoiceData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
-	return collection
-}
-
-func MenuData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
-	return collection
-}
-
-func UserData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
-	return collection
-}
-
-func TableData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
-	return collection
-}
-
-func OrderData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
-	return collection
-}
-func OrderItemData(client *mongo.Client, collectionName string) *mongo.Collection {
+func CreateCollection(client *mongo.Client, collectionName string) *mongo.Collection {
 	var collection *mongo.Collection = client.Database("restaurant-management").Collection(collectionName)
 	return collection
 }
